@@ -1,0 +1,31 @@
+# Configuration for evaluation of a fine-tuned classifier.
+# Points at a best-model checkpoint produced by finetune.py.
+
+model:
+  name: lorentz_part
+  max_num_particles: 128
+  num_particle_features: 4
+  num_classes: 10
+  embed_dim: 128
+  num_heads: 8
+  num_layers: 8
+  num_cls_layers: 2
+  num_mlp_layers: 0
+  hidden_dim: 256
+  hidden_mv_channels: 8
+  in_s_channels: null
+  out_s_channels: null
+  hidden_s_channels: 16
+  dropout: 0.1
+  expansion_factor: 4
+  pair_embed_dims: [64, 64, 64]
+  mask: false
+  inference: true
+  weights: null   # override on command line
+
+eval:
+  batch_size: 1000
+  num_workers: 8
+  pin_memory: true
+  save_fig: true
+  outputs_dir: ./outputs
